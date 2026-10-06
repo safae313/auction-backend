@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+npm-debug.log*
+coverage/
+.nyc_output/
+*.log
+
+.vscode/
+.DS_Store
+Thumbs.db
