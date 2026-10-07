@@ -33,7 +33,7 @@ test('GET / preserves the API root response', async () => {
 
     assert.equal(response.status, 200);
     assert.deepEqual(await response.json(), {
-        message: 'Auction platform API is running'
+        message: 'Auction platform API is running -ci pipeline'
     });
 });
 
