@@ -34,7 +34,7 @@ app.use(rateLimit({
 }));
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Auction platform API is running' });
+    res.json({ message: 'Auction platform API is running -ci pipeline' });
 });
 
 app.use(healthRoutes);
