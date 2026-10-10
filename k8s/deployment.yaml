@@ -1,0 +1,44 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auction-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auction-api
+  template:
+    metadata:
+      labels:
+        app: auction-api
+    spec:
+      containers:
+        - name: auction-api
+          image: ghcr.io/safae313/auction-backend:270f4997435a059d3baec05a9f328155fc85c5fa
+          ports:
+            - containerPort: 4400
+          envFrom:
+            - configMapRef:
+                name: auction-api-config
+            - secretRef:
+                name: auction-api-secret
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 4400
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 4400
+            initialDelaySeconds: 10
+            periodSeconds: 10
