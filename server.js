@@ -7,6 +7,7 @@ const app = require('./app');
 const { checkDatabase, closeDatabase } = require('./db/mysql');
 const { connectRedis, closeRedis } = require('./redis/redis');
 const { createWebSocketServer, closeWebSocketServer } = require('./websocket');
+ 
 
 async function startServer() {
     assertRuntimeConfig();

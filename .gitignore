@@ -11,3 +11,5 @@ coverage/
 .vscode/
 .DS_Store
 Thumbs.db
+smtp_password.txt
+metrics/tools/smtp_password.txtcode "$config"

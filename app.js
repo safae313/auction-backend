@@ -8,7 +8,7 @@ const healthRoutes = require('./health/healthRoutes');
 const requestLogger = require('./middleware/requestLogger');
 const notFound = require('./middleware/notFound');
 const { errorHandler } = require('./middleware/errorHandler');
-const { client: metricsClient } = require('./metrics');
+const { client: metricsClient } = require('../metrics/metrics');
 
 const app = express();
 

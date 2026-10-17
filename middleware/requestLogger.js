@@ -1,4 +1,4 @@
-const { httpRequestDuration } = require('../metrics');
+const { httpRequestDuration } = require('../../metrics/metrics');
 
 function requestLogger(req, res, next) {
     const startedAt = process.hrtime.bigint();
